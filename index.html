@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Godlymier P. Compuesto – Portfolio</title>
+<meta name="description" content="Student portfolio: about me, skills, projects and contact.">
+<style>
+:root{--bg:#faf9ff;--surface:#fff;--text:#1e1b3a;--muted:#625f80;--accent:#5b4bdb;--accent2:#ff7a59;--line:#e6e3f7;--glow:rgba(91,75,219,.14);--shadow:0 8px 28px rgba(60,45,150,.10);--ph:#fff0a8;--phtext:#5c4300;--navbg:rgba(250,249,255,.8)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11102a;--surface:#1a1838;--text:#ecebff;--muted:#a7a4cc;--accent:#a99dff;--accent2:#ff9b7d;--line:#2d2a58;--glow:rgba(169,157,255,.16);--shadow:0 8px 28px rgba(0,0,0,.35);--ph:#4d3d00;--phtext:#ffe28a;--navbg:rgba(17,16,42,.8)}}
+:root[data-theme="dark"]{--bg:#11102a;--surface:#1a1838;--text:#ecebff;--muted:#a7a4cc;--accent:#a99dff;--accent2:#ff9b7d;--line:#2d2a58;--glow:rgba(169,157,255,.16);--shadow:0 8px 28px rgba(0,0,0,.35);--ph:#4d3d00;--phtext:#ffe28a;--navbg:rgba(17,16,42,.8)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.ph{background:var(--ph);color:var(--phtext);padding:0 .3em;border-radius:5px}
+header{position:sticky;top:0;z-index:20;background:var(--navbg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{max-width:1080px;margin:auto;display:flex;align-items:center;gap:1rem;padding:.6rem 1.2rem}
+.logo{font-weight:800;text-decoration:none;color:var(--text);letter-spacing:-.02em;margin-right:auto;display:flex;align-items:center;gap:.7rem;min-width:0}
+.logo span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.logo .pic{flex:none;width:44px;height:44px;border-radius:50%;padding:3px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 3px 12px var(--glow);transition:transform .25s}
+.logo:hover .pic{transform:scale(1.06) rotate(-3deg)}
+.logo .pic img,.logo .pic b{width:100%;height:100%;border-radius:50%;display:block}
+.logo .pic img{object-fit:cover;border:2px solid var(--bg)}
+.logo .pic b{display:grid;place-items:center;background:var(--surface);color:var(--accent);font-size:.9rem}
+.links{display:flex;gap:.3rem;list-style:none;margin:0;padding:0}
+.links a{display:block;text-decoration:none;color:var(--muted);font-weight:600;font-size:.95rem;padding:.4rem .9rem;border-radius:99px;transition:.2s}
+.links a:hover{color:var(--text)}
+.links a.active{background:var(--glow);color:var(--accent)}
+.icon-btn{background:var(--surface);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:.4rem .7rem;font-size:1rem;cursor:pointer}
+#menu{display:none}
+section{max-width:1080px;margin:auto;padding:5rem 1.2rem 1rem}
+.label{display:block;color:var(--accent2);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem;margin-bottom:.4rem}
+h2{font-size:clamp(1.7rem,4vw,2.3rem);letter-spacing:-.02em;margin:0 0 1.6rem;line-height:1.2}
+#home{position:relative;padding-top:6rem;padding-bottom:3rem;min-height:78vh;display:grid;grid-template-columns:1.4fr 1fr;gap:2.5rem;align-items:center}
+#home::before{content:"";position:absolute;z-index:-1;inset:-20% -10% auto auto;width:560px;height:560px;background:radial-gradient(circle,var(--glow),transparent 65%);filter:blur(10px)}
+.chip{display:inline-block;border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:.3rem .9rem;font-size:.85rem;font-weight:600;color:var(--muted)}
+.chip b{color:var(--accent2)}
+h1{font-size:clamp(2.4rem,6.5vw,4rem);line-height:1.05;letter-spacing:-.035em;margin:1rem 0}
+.grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{max-width:560px;color:var(--muted);font-size:1.15rem}
+.btns{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.8rem}
+.btn{display:inline-block;padding:.8rem 1.5rem;border-radius:12px;text-decoration:none;font-weight:700;background:linear-gradient(135deg,var(--accent),#7a5bff);color:#fff;box-shadow:0 6px 18px var(--glow);transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.alt{background:var(--surface);color:var(--text);border:1px solid var(--line);box-shadow:none}
+.hero-card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:1.6rem;box-shadow:var(--shadow);text-align:center}
+.avatar{width:150px;height:150px;border-radius:50%;margin:0 auto 1rem;padding:5px;background:linear-gradient(135deg,var(--accent),var(--accent2));overflow:hidden}
+.avatar>div{width:100%;height:100%;border-radius:50%;background:var(--surface);display:grid;place-items:center;font-size:2.4rem;font-weight:800;color:var(--accent);overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.hero-card p{margin:.2rem 0;color:var(--muted);font-size:.95rem}
+.hero-card strong{font-size:1.15rem}
+.grid{display:grid;gap:1.4rem;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.4rem;box-shadow:var(--shadow);transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.card h3{margin:.2rem 0 .5rem;line-height:1.3}
+.project{display:flex;flex-direction:column;padding:0;overflow:hidden}
+.project .body{padding:1.3rem 1.4rem 1.5rem}
+.shot{aspect-ratio:16/9;display:grid;place-items:center;background:linear-gradient(135deg,var(--glow),transparent);border-bottom:1px solid var(--line);color:var(--muted);font-size:.9rem;text-align:center;padding:.5rem}
+.shot img{width:100%;height:100%;object-fit:cover}
+.tags{display:flex;flex-wrap:wrap;gap:.45rem;margin:.7rem 0 0;padding:0;list-style:none}
+.tags li{background:var(--glow);color:var(--accent);border-radius:99px;padding:.15rem .8rem;font-size:.85rem;font-weight:600}
+.tags li.ph{color:var(--phtext);background:var(--ph)}
+.feature{grid-column:1/-1;flex-direction:row}
+.feature .shot{flex:1 1 45%;aspect-ratio:auto;min-height:240px;border-bottom:0;border-right:1px solid var(--line)}
+.feature .body{flex:1 1 55%;align-self:center;padding:1.8rem}
+.about{display:grid;gap:2rem;grid-template-columns:1.3fr 1fr}
+.facts{display:grid;gap:.8rem}
+.fact{display:flex;gap:.8rem;align-items:flex-start}
+.fact span{font-size:1.3rem}
+.row{display:flex;justify-content:space-between;font-weight:600}
+.bar{height:9px;background:var(--line);border-radius:99px;margin:.4rem 0 1.1rem;overflow:hidden}
+.bar span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:99px}
+.cta{background:linear-gradient(135deg,var(--accent),#7a5bff);color:#fff;border-radius:26px;padding:clamp(2rem,6vw,3.5rem);text-align:center;box-shadow:var(--shadow)}
+.cta h2{margin-bottom:.6rem}
+.cta p{max-width:520px;margin:0 auto 1.6rem;opacity:.92}
+.cta .btns{justify-content:center;margin:0}
+.cta .btn{background:#fff;color:#3d2fb0;box-shadow:none}
+.cta .btn.alt{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.4)}
+footer{max-width:1080px;margin:3.5rem auto 0;padding:1.5rem 1.2rem 2.5rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem;text-align:center}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.logo .pic{transition:none}}
+@media (max-width:760px){
+#menu{display:block}
+.links{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;padding:.5rem;background:var(--bg);border-bottom:1px solid var(--line)}
+.links.open{display:flex}
+#home,.about{grid-template-columns:1fr}
+#home{padding-top:3.5rem}
+.feature{flex-direction:column}
+.feature .shot{aspect-ratio:16/9;min-height:0;border-right:0;border-bottom:1px solid var(--line)}
+section{padding-top:3.5rem}
+.logo{font-size:.95rem}
+}
+</style>
+</head>
+<body>
+<header>
+<nav aria-label="Main">
+<a class="logo" href="#home"><span class="pic"><img src="pfp.jpg" alt="Godlymier P. Compuesto" onerror="this.outerHTML='<b>GC</b>'"></span><span>Godlymier P. Compuesto</span></a>
+<ul class="links" id="links">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<button class="icon-btn" id="theme" aria-label="Toggle dark mode">◐</button>
+<button class="icon-btn" id="menu" aria-expanded="false" aria-controls="links">Menu</button>
+</nav>
+</header>
+
+<main>
+<section id="home">
+<div>
+<span class="chip"><b>●</b> Student portfolio</span>
+<h1>Hi, I’m <span class="grad ph">Godlymier P. Compuesto</span>.</h1>
+<p class="lead">I’m a <span class="ph">BSIT 4th Year</span> student learning about <span class="ph">[e.g. IoT, AI and web development]</span>. I like building technology that helps real communities.</p>
+<div class="btns">
+<a class="btn" href="#projects">See my projects</a>
+<a class="btn alt" href="#contact">Get in touch</a>
+</div>
+</div>
+<div class="hero-card">
+<div class="avatar"><div><img src="pfp.jpg" alt="Photo of Godlymier P. Compuesto" onerror="this.replaceWith(document.createTextNode('GC'))"></div></div>
+<strong class="ph">Godlymier P. Compuesto</strong>
+<p class="ph">BSIT 4th Year</p>
+</div>
+</section>
+
+<section id="about" class="reveal">
+<span class="label">About</span>
+<h2>A little about me</h2>
+<div class="about">
+<div>
+
+<p>For my capstone, I’m building a smart fish drying monitoring system for fisherfolk in Barangay Pasil, combining IoT sensors and AI to help reduce post-harvest losses.</p>
+</div>
+<div class="card facts">
+<div class="fact"><span>🎓</span><div><strong>Cebu Eastern College</strong><br><span class="ph">BSIT 4th Year</span></div></div>
+<div class="fact"><span>🎯</span><div><strong>IT Industry</strong><br><span class="ph">Software Development</span></div></div>
+<div class="fact"><span>✨</span><div><strong>Playing Online Games</strong><br><span class="ph">Mobile Legends, Dota2</span></div></div>
+</div>
+</div>
+</section>
+
+<section id="skills" class="reveal">
+<span class="label">Skills</span>
+<h2>What I can do right now</h2>
+<div class="grid">
+<div class="card">
+<div class="row"><span>HTML &amp; CSS</span><span class="ph">[level]</span></div>
+<div class="bar"><span style="width:50%"></span></div>
+<div class="row"><span>JavaScript</span><span class="ph">[level]</span></div>
+<div class="bar"><span style="width:35%"></span></div>
+<div class="row"><span>Hardware / IoT basics</span><span class="ph">[level]</span></div>
+<div class="bar" style="margin-bottom:0"><span style="width:40%"></span></div>
+</div>
+<div class="card">
+<h3>Tools I use</h3>
+<ul class="tags"><li class="ph">[VS Code]</li><li class="ph">[GitHub]</li><li class="ph">[Arduino / ESP32?]</li><li class="ph">[Python?]</li></ul>
+<h3 style="margin-top:1.3rem">Soft skills</h3>
+<ul class="tags"><li class="ph">[Teamwork]</li><li class="ph">[Communication]</li><li class="ph">[Problem solving]</li></ul>
+</div>
+</div>
+</section>
+
+<section id="projects" class="reveal">
+<span class="label">Projects</span>
+<h2>Things I’ve built</h2>
+<div class="grid">
+
+<article class="card project feature">
+<div class="shot"><img src="drysense.jpg" alt="Screenshot of the smart fish drying monitoring system" onerror="this.replaceWith(document.createTextNode('Add a screenshot as drysense.jpg'))"></div>
+<div class="body">
+<span class="label">Capstone project</span>
+<h3>AI-Enabled IoT Smart Fish Drying Monitoring System</h3>
+<p>Monitors fish drying conditions for fisherfolk in Barangay Pasil, with the goal of reducing post-harvest losses.</p>
+<p><strong>My contribution:</strong> <span class="ph">BackEnd</span></p>
+
+<a class="btn" href="file:///C:/Users/compu/Downloads/Smart%20Fish%20Drying%20Prototype.html">DrySense</a>
+</div>
+</article>
+
+<article class="card project">
+<div class="shot"><img src="pic.jpg" alt="Screenshot of Lanternbound" onerror="this.replaceWith(document.createTextNode('Add a screenshot as pic.jpg'))"></div>
+<div class="body">
+<h3 class="ph">Lanternbound The Last Night</h3>
+<p class="ph">Lanternbound is a 2D puzzle-platformer where you play Lumi, a lantern keeper who uses light to reveal hidden paths, solve puzzles, and fight shadows to bring the sun back to the world of Elaria.</p>
+<p><strong>My contribution:</strong> <span class="ph">BackEnd</span></p>
+<a class="btn" href="https://lbs-vyo1.onrender.com/">Lanternbound</a>
+</div>
+</article>
+
+</div>
+</section>
+
+<section id="contact" class="reveal">
+<div class="cta">
+<h2>Let’s connect</h2>
+<p>I’m open to questions, feedback and collaboration. The easiest way to reach me is by email.</p>
+<div class="btns">
+<a class="btn" href="https://myaccount.google.com/profile">Email me</a>
+<a class="btn alt" href="https://github.com/Compuesto17" target="_blank" rel="noopener">GitHub</a>
+
+<!-- Optional resume: put your PDF at assets/resume.pdf and uncomment -->
+<!-- <a class="btn alt" href="assets/resume.pdf" download>Download resume</a> -->
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+© <span id="yr"></span> <span class="ph">Godlymier P. Compuesto</span>. Built with HTML, CSS and JavaScript, with help from AI tools <span class="ph">ChatGPT, GitHub Copilot</span>.
+</footer>
+
+<script>
+var menu=document.getElementById('menu'),links=document.getElementById('links');
+menu.addEventListener('click',function(){var o=links.classList.toggle('open');menu.setAttribute('aria-expanded',o)});
+links.addEventListener('click',function(e){if(e.target.tagName==='A'){links.classList.remove('open');menu.setAttribute('aria-expanded','false')}});
+document.getElementById('theme').addEventListener('click',function(){
+var r=document.documentElement,dark=r.getAttribute('data-theme')?r.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
+r.setAttribute('data-theme',dark?'light':'dark')});
+document.getElementById('yr').textContent=new Date().getFullYear();
+var secs=document.querySelectorAll('main section[id]'),anchors=document.querySelectorAll('.links a');
+if('IntersectionObserver' in window){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){
+if(e.isIntersecting){e.target.classList.add('in');
+anchors.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-35% 0px -55% 0px',threshold:0});
+secs.forEach(function(s){io.observe(s)});
+var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(function(s){io2.observe(s)});
+}else{document.querySelectorAll('.reveal').forEach(function(s){s.classList.add('in')})}
+</script>
+</body>
+</html>
